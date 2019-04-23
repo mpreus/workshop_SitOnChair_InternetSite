@@ -143,6 +143,7 @@ li {
 	font-size: 14px;
 	text-transform: none;
 	position: absolute;
+	display: none;
 }
 
 section.section1 {
@@ -204,22 +205,39 @@ footer {
 div.first {
 	display: flex;
 	padding-top: 50px;
-	
+	justify-content: space-around;
 }
 
-div.first .chair {
-	background-image: url("images/black_chair.png");
-	width: 440px;
+.chair {
+	width: 500px;
+}
+
+/* formatowanie SLAJDERA */
+.slider > ul {
+    list-style: none;
+}
+
+.slider > li {
+    display: none;
+    list-style: none;
+	width: 500px;
 	height: 440px;
-	align-self: center;
-	background-size: 150%;
-	margin-left: -40px;
-	background-position: center;
 }
 
-div.first .banner {
-	width: 400px;
-	padding-left: 60px;
+.slider .visible {
+    display: inline-block;
+}
+
+.slider li img {
+	width: 500px;
+	height: 440px;
+}
+
+
+
+.banner {
+	width: 500px;
+	padding-right: 60px;
 }
 
 .banner h1 {
@@ -228,6 +246,7 @@ div.first .banner {
 	padding-top: 80px;
 	padding-bottom: 40px;
 	color: #111;
+	text-align: center;
 }
 
 .banner p {
@@ -247,7 +266,7 @@ button.more {
 	font-size: 24px;
 	text-align: center;
 	border-radius: 10px;
-	margin: 0 70px;
+	margin: 0 40px;
 }
 
 .commercial .content1 {

@@ -25,7 +25,7 @@
 				<ul>
 					<li id="menu">
 						O firmie
-						<div class="unrolled">
+						<div id="subMenu" class="unrolled">
 							<div>Aktualności</div>
 							<div>Nasz team</div>
 							<div>Historia</div>
@@ -41,28 +41,34 @@
 
 	<section class="section1">
 		<div class="container">
-			<div class="sign_left">
-				<p><</p>
-			</div>
 			
-			<div class="first">
-				
-				<div class="chair">
-				
-				</div>
-				
-				<div class="banner">
-					<h1>sit <span>on</span> our <span>chair</span></h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus necessitatibus ipsum tenetur temporibus, nulla, eveniet maiores culpa ducimus quod non doloremque quo aspernatur, voluptatibus architecto consequuntur ea rem labore explicabo.
-					</p>
-					<button class="more">zobacz więcej</button>
-				</div>
-			</div>
 			
-			<div class="sign_right">
-				<p>></p>
-			</div>
+				<div class="sign_left">
+					<p id="prevPicture"><</p>
+				</div>
+			
+				<div class="first">
+					
+					<div class="chair slider">
+						<ul>
+							<li class="pictures"><img src="images/black_chair.png"></li>
+
+						</ul>
+					</div>
+					
+					<div class="banner">
+						<h1>sit <span>on</span> our <span>chair</span></h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus necessitatibus ipsum tenetur temporibus, nulla, eveniet maiores culpa ducimus quod non doloremque quo aspernatur, voluptatibus architecto consequuntur ea rem labore explicabo.
+						</p>
+						<button class="more">zobacz więcej</button>
+					</div>
+				</div>
+			
+				<div class="sign_right">
+					<p id="nextPicture">></p>
+				</div>
+			
 		</div>
 	</section>
 		
@@ -70,14 +76,20 @@
 		<div class="container">
 			<div class="commercial">
 				
-				<div class="content1 image1">
-					<p>Chair CLAIR</p>
-					<div class="line_short"></div>
+				<div id="imageClair" class="content1 image1">
+					<div id="data1">
+						<p>Chair CLAIR</p>
+						<div class="line_short"></div>
+					</div>
+					
 				</div>
 				
-				<div class="content1 image2">
-					<p>Chair MARGARITA</p>
-					<div class="line_short"></div>
+				<div id="imageMargarita" class="content1 image2">
+					<div id="data2">
+						<p>Chair MARGARITA</p>
+						<div class="line_short"></div>
+					</div>
+					
 				</div>
 				
 				<div class="content2 explanation">
@@ -265,6 +277,6 @@
 		</div>
 	</footer>
 
-
+<script src="app/app.js"></script>
 </body>
 </html>
