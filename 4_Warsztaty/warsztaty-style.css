@@ -217,14 +217,14 @@ div.first {
     list-style: none;
 }
 
-.slider > li {
-    display: none;
+li.pictures {
+   	display: none;
     list-style: none;
 	width: 500px;
 	height: 440px;
 }
 
-.slider .visible {
+.visible {
     display: inline-block;
 }
 
@@ -232,7 +232,6 @@ div.first {
 	width: 500px;
 	height: 440px;
 }
-
 
 
 .banner {
