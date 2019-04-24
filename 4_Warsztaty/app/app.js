@@ -82,6 +82,20 @@ poprawnie przypisują klasę 'visible' i poprawnie ją usuwają (co widać w kon
 ale obrazki nie zmieniają się - pojawiają się kolejne jeden pod drugim. 
 Zapewne coś w CSS, ale nie mogę dojść co */
 
+/* (4) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu */
+	var chairType = document.getElementById("arrow1");
+	chairType.addEventListener('click', showListOfTypes);
+
+	function showListOfTypes(event) {
+		var choice1 = document.getElementById("listPanel1");
+		console.log(choice1);
+		choice1.style.display = "block";
+	}
+
+
+
+
+
 }
 
 
