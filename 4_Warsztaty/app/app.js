@@ -48,10 +48,10 @@ function init() {
 // uchwycenie elementów sterujących slajdami:
 	var previous = document.getElementById("prevPicture");
 	var next = document.getElementById("nextPicture");
-	console.log(previous);
+
 // obrazki i indeks do sterowania:
 	var list = document.querySelectorAll(".pictures"); // lista klas
-	console.log(list);
+
 	var index = 0;
 
 	list[index].setAttribute("class", "visible"); // pierwszy obrazek jest widoczny
@@ -82,16 +82,53 @@ poprawnie przypisują klasę 'visible' i poprawnie ją usuwają (co widać w kon
 ale obrazki nie zmieniają się - pojawiają się kolejne jeden pod drugim. 
 Zapewne coś w CSS, ale nie mogę dojść co */
 
-/* (4) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu */
+
+/* (4a) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu 'rodzaj krzesła' */
 	var chairType = document.getElementById("arrow1");
 	chairType.addEventListener('click', showListOfTypes);
+	chairType.addEventListener('dblclick', hideListOfTypes);
 
 	function showListOfTypes(event) {
 		var choice1 = document.getElementById("listPanel1");
-		console.log(choice1);
 		choice1.style.display = "block";
 	}
 
+	function hideListOfTypes(event) {
+		var choice1 = document.getElementById("listPanel1");
+		choice1.style.display = "none";
+	} 
+
+/* UWAGA - w każdym z przypadków lista ma się chować także po kliknięciu (wybraniu) opcji */
+
+/* (4b) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu 'kolor krzesła' */
+	var chairColor = document.getElementById("arrow2");
+	chairColor.addEventListener('click', showListOfColors);
+	chairColor.addEventListener('dblclick', hideListOfColors);
+
+	function showListOfColors(event) {
+		var choice2 = document.getElementById("listPanel2");
+		choice2.style.display = "block";
+	}
+
+	function hideListOfColors(event) {
+		var choice2 = document.getElementById("listPanel2");
+		choice2.style.display = "none";
+	}
+
+/* (4c) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu 'materiał krzesła' */
+	var chairFabric = document.getElementById("arrow3");
+	chairFabric.addEventListener('click', showListOfFabric);
+	chairFabric.addEventListener('dblclick', hideListOfFabric);
+
+	function showListOfFabric(event) {
+		var choice3 = document.getElementById("listPanel3");
+		choice3.style.display = "block";
+	}
+
+	function hideListOfFabric(event) {
+		var choice3 = document.getElementById("listPanel3");
+		choice3.style.display = "none";
+	}
 
 
 

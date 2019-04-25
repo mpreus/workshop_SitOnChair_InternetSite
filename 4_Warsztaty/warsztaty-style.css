@@ -126,7 +126,7 @@ nav {
 	text-transform: uppercase;
 }
 
-li {
+ul.nav li {
 	display: inline-block;
 	list-style: none;
 	padding-left: 40px;
