@@ -23,17 +23,17 @@
 			<p>SIT <span>ON</span> CHAIR</p>
 			<nav>
 				<ul class="nav">
-					<li id="menu">
+					<a href=""><li id="menu">
 						O firmie
 						<div id="subMenu" class="unrolled">
 							<div>Aktualności</div>
 							<div>Nasz team</div>
 							<div>Historia</div>
 						</div>
-					</li>
+					</li></a>
 						
-					<li>Galeria</li>
-					<li>Kontakt</li>
+					<a href=""><li>Galeria</li></a>
+					<a href=""><li>Kontakt</li></a>
 				</ul>
 			</nav>
 		</div>
@@ -42,33 +42,31 @@
 	<section class="section1">
 		<div class="container">
 			
-				<div class="sign_left">
-					<p id="prevPicture"><</p>
-				</div>
+			<div class="sign_left">
+				<p id="prevPicture"><</p>
+			</div>
 			
-				<div class="first">
+			<div class="first">
+				<div class="chair slider">
+					<ul>
+						<li class="pictures"><img src="images/black_chair.png"></li>
+						<li class="pictures"><img src="images/orange_chair.png"></li>
+						<li class="pictures"><img src="images/red_chair.png"></li>
+					</ul>
+				</div>
 					
-					<div class="chair slider">
-						<ul>
-							<li class="pictures"><img src="images/black_chair.png"></li>
-							<li class="pictures"><img src="images/orange_chair.png"></li>
-							<li class="pictures"><img src="images/red_chair.png"></li>
-						</ul>
-					</div>
-					
-					<div class="banner">
-						<h1>sit <span>on</span> our <span>chair</span></h1>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus necessitatibus ipsum tenetur temporibus, nulla, eveniet maiores culpa ducimus quod non doloremque quo aspernatur, voluptatibus architecto consequuntur ea rem labore explicabo.
-						</p>
-						<button class="more">zobacz więcej</button>
-					</div>
+				<div class="banner">
+					<h1>sit <span>on</span> our <span>chair</span></h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus necessitatibus ipsum tenetur temporibus, nulla, eveniet maiores culpa ducimus quod non doloremque quo aspernatur, voluptatibus architecto consequuntur ea rem labore explicabo.
+					</p>
+					<button class="more">zobacz więcej</button>
 				</div>
+			</div>
 			
-				<div class="sign_right">
-					<p id="nextPicture">></p>
-				</div>
-			
+			<div class="sign_right">
+				<p id="nextPicture">></p>
+			</div>
 		</div>
 	</section>
 		
@@ -81,7 +79,6 @@
 						<p>Chair CLAIR</p>
 						<div class="line_short"></div>
 					</div>
-					
 				</div>
 				
 				<div id="imageMargarita" class="content1 image2">
@@ -89,7 +86,6 @@
 						<p>Chair MARGARITA</p>
 						<div class="line_short"></div>
 					</div>
-					
 				</div>
 				
 				<div class="content2 explanation">
@@ -299,33 +295,37 @@
 	    </div>
 	</section>
 
+<!-- sekcja KONTAKT z formularzem -->
 	<section class="section4">
 		<div class="contact container">
-<!-- sekcja KONTAKT z formularzem na szerokość 632px z lewej 
-				a element obrazek, ZGADZAM SIĘ + WYŚLIJ na szerokość 343px + 57px odstępu -->
 
 			<div class="title">
 				<h2>kontakt</h2>
 				<div class="line_long"></div>
 			</div>
 			
-			
 			<div class="left_part">
 				<form>
-					<input type="text" name="name" placeholder="Imię">
+					<input type="text" name="name" placeholder="imię">
 					<input type="email" name="email" placeholder="e-mail">
-					<textarea rows="4" placeholder="Wiadomość"></textarea>
+					<textarea rows="4" placeholder="wiadomość"></textarea>
 				</form>
 			</div>
 			
 			<div class="right_part">
 				<img id="image" src="images/red_chair.png">
 				
-				<div class="agreement">
+			<!--	<div class="agreement">
 					<div class="form_ok"></div>
 					<p>Zgadzam się na przetwarzanie danych osobowych</p>
-				</div>
+				</div>  -->
 				
+<!-- DO SFORMATOWANIA -->
+ 				<div class="checkbox check-box">
+	                <input type="checkbox" id="personal-data">
+	                <label for="personal-data" id="agreement">Zgadzam się na przetwarzanie danych osobowych</label>
+	            </div>
+
 				<button type="submit" name="submit">wyślij</button>
 			</div>
 			
@@ -341,10 +341,10 @@
 			</div>
 			<div class="right_part">
 				<div id="social_media">
-					<img src="images/flickr.png">
-					<img src="images/vimeo.png">
-					<img src="images/pinterest.png">
-					<img src="images/twitter.png">
+					<a href=""><img src="images/flickr.png"></a>
+					<a href=""><img src="images/vimeo.png"></a>
+					<a href=""><img src="images/pinterest.png"></a>
+					<a href=""><img src="images/twitter.png"></a>
 				</div>
 				<div>
 					<p id="last_banner">SIT <span>ON</span> CHAIR</p>

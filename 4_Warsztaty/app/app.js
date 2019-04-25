@@ -28,7 +28,7 @@ function init() {
 	
 	function showData1(event) {
 		var nameBlock1 = document.getElementById("data1");
-		nameBlock1.style.display = "inline-block";
+		nameBlock1.style.display = "block";
 	}
 
 /* - dla obrazka MARGARITA */
@@ -41,7 +41,7 @@ function init() {
 	
 	function showData2(event) {
 		var nameBlock2 = document.getElementById("data2");
-		nameBlock2.style.display = "inline-block";
+		nameBlock2.style.display = "block";
 	}
 
 /* (3) SLAJDER */
