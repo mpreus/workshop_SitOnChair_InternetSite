@@ -46,41 +46,44 @@ function init() {
 
 /* (3) SLAJDER */
 // uchwycenie elementów sterujących slajdami:
-	var previous = document.getElementById("prevPicture");
-	var next = document.getElementById("nextPicture");
-
+	var previous = document.getElementById("prevPicture"); 	// poprzednie
+	var next = document.getElementById("nextPicture");		// następne
+/* domyślnie pierwszy obrazek jest widoczny - ma klasę 'visible'
+kliknięcie w 'next' usuwa klasę 'visible' pierwszemu obrazkowi i przydziela ją następnemu
+kliknięcie w 'next' usuwa klasę 'visible' drugiemu i przydziela ją trzeciemu
+kliknięcie w 'next' usuwa klasę 'visible' trzeciemu i przydziela ją pierwszemu
+- podobnie w drugą stronę
+*/
 // obrazki i indeks do sterowania:
-	var list = document.querySelectorAll(".pictures"); // lista klas
+	var list = document.querySelectorAll(".pictures"); 	// lista klas
+	var i = 0;
+	list[i].classList.add("visible"); 
+	list[i].classList.remove("pictures"); 
+	console.log(list[i]);
 
-	var index = 0;
+	next.addEventListener('click', nextSlide); 			// na kliknięcie uruchom funkcję
+	previous.addEventListener('click', prevSlide);		// na kliknięcie uruchom funkcję
 
-	list[index].setAttribute("class", "visible"); // pierwszy obrazek jest widoczny
-
-// funkcja dla elementu "poprzedni obrazek":
-	previous.addEventListener('click', prevSlide); 	// na kliknięcie...
-	function prevSlide(event) {						// ...bieżącemu elementowi listy zdejmij klasę
-		list[index].removeAttribute("class", "visible");
-		index -= 1;									// zmniejsz indeks
-		if (index === -1) {							// warunek - indeks nie mniejszy niż 0
-			index = list.length - 1;
+	function nextSlide(event) {
+		list[i].classList.add("pictures");
+		list[i].classList.remove("visible");
+		i += 1;
+		list[i].classList.remove("pictures");
+		list[i].classList.add("visible");	
+		
+		if (i === 2) { // ZWERYFIKOWAĆ !!!
+			i = 0;
 		}
-		list[index].setAttribute("class", "visible"); 	// elementowi z mniejszym indeksem dodaj klasę
-	}
 
-// funkcja dla elementu "następny obrazek":
-	next.addEventListener('click', nextSlide); 	// na kliknięcie...
-	function nextSlide(event) {					// ...bieżącemu elementowi usuń klasę
-		list[index].removeAttribute("class", "visible");
-		index += 1;							// zwiększ indeks
-		if (index >= list.length) { 
-			index = 0;
-		}
-		list[index].setAttribute("class", "visible"); // elementowi listy z większym indeksem dodaj klasę
 	}
-/* UWAGA - powyższe ustawienia poprawnie wyświetlają pierwszy obrazek, 
-poprawnie przypisują klasę 'visible' i poprawnie ją usuwają (co widać w konsoli),
-ale obrazki nie zmieniają się - pojawiają się kolejne jeden pod drugim. 
-Zapewne coś w CSS, ale nie mogę dojść co */
+		
+	function prevSlide(event) {
+		list[0].classList.remove("visible");
+		list[0].classList.add("pictures");
+
+		list[2].classList.remove("pictures");
+		list[2].classList.add("visible");
+	}
 
 
 /* (4a) eventy dla kompletowania ZAMÓWIENIA - wysuwanie i chowanie podmenu 'rodzaj krzesła' */
