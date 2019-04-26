@@ -14,6 +14,8 @@ function init() {
 	function hideMenu(event) { 						// ...uruchamia funkcję 'hideMenu'
 		subMenu.style.display = "none";				// ponownie chowającą podmenu
 	}
+
+
 /* (2) eventy dla obrazków w sekcji COMMERCIAL */
 	var image1 = document.getElementById("imageClair");
 	var image2 = document.getElementById("imageMargarita");
@@ -44,45 +46,42 @@ function init() {
 		nameBlock2.style.display = "block";
 	}
 
+
 /* (3) SLAJDER */
 // uchwycenie elementów sterujących slajdami:
 	var previous = document.getElementById("prevPicture"); 	// poprzednie
 	var next = document.getElementById("nextPicture");		// następne
-/* domyślnie pierwszy obrazek jest widoczny - ma klasę 'visible'
-kliknięcie w 'next' usuwa klasę 'visible' pierwszemu obrazkowi i przydziela ją następnemu
-kliknięcie w 'next' usuwa klasę 'visible' drugiemu i przydziela ją trzeciemu
-kliknięcie w 'next' usuwa klasę 'visible' trzeciemu i przydziela ją pierwszemu
-- podobnie w drugą stronę
-*/
+
 // obrazki i indeks do sterowania:
 	var list = document.querySelectorAll(".pictures"); 	// lista klas
 	var i = 0;
 	list[i].classList.add("visible"); 
 	list[i].classList.remove("pictures"); 
-	console.log(list[i]);
+	console.log(list.length);
 
-	next.addEventListener('click', nextSlide); 			// na kliknięcie uruchom funkcję
-	previous.addEventListener('click', prevSlide);		// na kliknięcie uruchom funkcję
+	next.addEventListener('click', nextSlide); 			// na kliknięcie uruchom funkcję 'nextSlide'
+	previous.addEventListener('click', prevSlide);		// na kliknięcie uruchom funkcję 'prevSlide'
 
 	function nextSlide(event) {
 		list[i].classList.add("pictures");
-		list[i].classList.remove("visible");
+		list[i].classList.remove("visible"); 
 		i += 1;
-		list[i].classList.remove("pictures");
-		list[i].classList.add("visible");	
-		
-		if (i === 2) { // ZWERYFIKOWAĆ !!!
+		if (i === list.length) { 
 			i = 0;
 		}
-
+		list[i].classList.remove("pictures"); 
+		list[i].classList.add("visible");
 	}
 		
 	function prevSlide(event) {
-		list[0].classList.remove("visible");
-		list[0].classList.add("pictures");
-
-		list[2].classList.remove("pictures");
-		list[2].classList.add("visible");
+		list[i].classList.remove("visible");
+		list[i].classList.add("pictures");
+		i -= 1;
+		if (i < 0) {
+			i = 2;
+		}
+		list[i].classList.remove("pictures");
+		list[i].classList.add("visible");
 	}
 
 
