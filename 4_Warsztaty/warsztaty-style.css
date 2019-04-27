@@ -433,6 +433,7 @@ footer {
 	font-size: 62px;
 	color: #00b38f;
 	line-height: 504px;
+	text-align: left;
 }
 
 div.first {
@@ -579,7 +580,7 @@ button.more {
 	flex-direction: column;
 }
 
-.title {
+.title1 {
 	height: 50px;
 	width: 741px;
 }

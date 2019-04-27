@@ -131,6 +131,41 @@ function init() {
 		var choice3 = document.getElementById("listPanel3");
 		choice3.style.display = "none";
 	}
+	
+/* (4d) eventy dla kompletowania zamówienia */
+// uchwycenie elementu tworzonego dynamicznie:
+    var title = document.querySelector(".title"); // napis 'Twój fotel'
+    var titleValue = document.querySelector(".title.value"); // miejsce na wartość
+
+    var color = document.querySelector(".color"); // miejsce na 'kolor'
+    var colorValue = document.querySelector(".color.value"); 
+
+    var pattern = document.querySelector(".pattern"); // miejsce na 'wzór'
+    var patternValue = document.querySelector(".pattern.value");
+
+    var transport = document.querySelector(".transport"); // miejsce na 'transport'
+    var transportValue = document.querySelector(".transport.value");
+
+    var sum = document.querySelector(".sum");console.log(sum);
+
+// zmienne na kwoty z początkowymi wartościami:
+	var number1 = 0;
+    var number2 = 0;
+    var number3 = 0;
+    var number4 = 0;
+
+// inne zmienne:
+// 1-lista opcji rodzaj krzesła
+var listPanelChildren = document.querySelectorAll(".list_panel")[0].children;
+
+// 2-lista opcji kolor krzesła: 
+    var listPanelChildren1 = document.querySelectorAll(".list_panel")[1].children;
+
+// 3-lista opcji materiał:
+    var listPanelChildren2 = document.querySelectorAll(".list_panel")[2].children;
+
+// uchwycenie etykiet list do rozwijania:
+    var listLabel = document.querySelectorAll(".list_label");
 
 
 
