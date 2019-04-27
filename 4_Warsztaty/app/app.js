@@ -49,39 +49,38 @@ function init() {
 
 /* (3) SLAJDER */
 // uchwycenie elementów sterujących slajdami:
-	var previous = document.getElementById("prevPicture"); 	// poprzednie
-	var next = document.getElementById("nextPicture");		// następne
+	var previous = document.getElementById("prevPicture"); 	// strzałka 'poprzednie'
+	var next = document.getElementById("nextPicture");		// strzałka 'następne'
 
 // obrazki i indeks do sterowania:
 	var list = document.querySelectorAll(".pictures"); 	// lista klas
 	var i = 0;
 	list[i].classList.add("visible"); 
 	list[i].classList.remove("pictures"); 
-	console.log(list.length);
 
 	next.addEventListener('click', nextSlide); 			// na kliknięcie uruchom funkcję 'nextSlide'
 	previous.addEventListener('click', prevSlide);		// na kliknięcie uruchom funkcję 'prevSlide'
 
 	function nextSlide(event) {
-		list[i].classList.add("pictures");
-		list[i].classList.remove("visible"); 
-		i += 1;
-		if (i === list.length) { 
+		list[i].classList.add("pictures"); 		// bieżącemy obrazkowi dodaj klasę 'pictures' (ukryje go)
+		list[i].classList.remove("visible"); 	// usuń mu klasę 'visible'
+		i += 1;									
+		if (i === list.length) { 				
 			i = 0;
 		}
-		list[i].classList.remove("pictures"); 
-		list[i].classList.add("visible");
+		list[i].classList.remove("pictures"); 	// następnemu obrazkowi usuń klasę 'pictures'
+		list[i].classList.add("visible");		// dodaj klasę 'visible' (pokaże go)
 	}
 		
 	function prevSlide(event) {
 		list[i].classList.remove("visible");
-		list[i].classList.add("pictures");
+		list[i].classList.add("pictures"); 
 		i -= 1;
 		if (i < 0) {
 			i = 2;
 		}
 		list[i].classList.remove("pictures");
-		list[i].classList.add("visible");
+		list[i].classList.add("visible"); 
 	}
 
 
@@ -131,7 +130,7 @@ function init() {
 		var choice3 = document.getElementById("listPanel3");
 		choice3.style.display = "none";
 	}
-	
+
 /* (4d) eventy dla kompletowania zamówienia */
 // uchwycenie elementu tworzonego dynamicznie:
     var title = document.querySelector(".title"); // napis 'Twój fotel'
@@ -146,29 +145,96 @@ function init() {
     var transport = document.querySelector(".transport"); // miejsce na 'transport'
     var transportValue = document.querySelector(".transport.value");
 
-    var sum = document.querySelector(".sum");console.log(sum);
+    var sum = document.querySelector(".sum"); 
 
 // zmienne na kwoty z początkowymi wartościami:
-	var number1 = 0;
-    var number2 = 0;
-    var number3 = 0;
-    var number4 = 0;
+	var number1 = 0; // rodzaj krzesła
+    var number2 = 0; // kolor krzesła
+    var number3 = 0; // rodzaj materiału
+    var number4 = 0; // koszt transportu
+    var suma = 0; 	// koszt całkowity
 
 // inne zmienne:
+// 0-wszystkie rozwijane panele:
+	var choice1 = document.getElementById("listPanel1");
+	var choice2 = document.getElementById("listPanel2");
+	var choice3 = document.getElementById("listPanel3");
 // 1-lista opcji rodzaj krzesła
-var listPanelChildren = document.querySelectorAll(".list_panel")[0].children;
+	var listPanelChildren = choice1.children; 
 
 // 2-lista opcji kolor krzesła: 
-    var listPanelChildren1 = document.querySelectorAll(".list_panel")[1].children;
+    var listPanelChildren1 = choice2.children;
 
 // 3-lista opcji materiał:
-    var listPanelChildren2 = document.querySelectorAll(".list_panel")[2].children;
+    var listPanelChildren2 = choice3.children;
 
 // uchwycenie etykiet list do rozwijania:
     var listLabel = document.querySelectorAll(".list_label");
 
+// realizacja zamówień:
+	for (var i = 0; i < listPanelChildren.length; i++) { // lista rodzaj krzesła...
+        listPanelChildren[i].addEventListener("click", function () { // ...dla każdego elementu listy...
+        listLabel[0].innerHTML = this.textContent; // ...tekst pierwszej etykiety zmień na wybrany rodzaj krzesła
+        choice1.style.display = "none"; // ...listy nie wyświetlaj 
 
+        title.innerHTML = this.textContent; // za tytuł wpisz wybraną nazwę
+        titleValue.innerHTML = this.dataset.chairPrice; // za wartość wpisz dane z dataset (cena krzesła)
+        number1 = parseInt(this.dataset.chairPrice);
 
+        if (transportCost.checked) { // jeśli zaznaczono transport, dadaj też tę kwotę
+            suma = number1 + number2 + number3 + number4;
+        } 
+        else {
+            suma = number1 + number2 + number3;
+        }
+        sum.textContent = suma;
+        });
+    }
+
+    for (var i = 0; i < listPanelChildren1.length; i++) {
+        listPanelChildren1[i].addEventListener("click", function () {
+        listLabel[1].innerHTML = this.textContent;
+        choice2.style.display = "none";
+
+        color.innerHTML = this.textContent;
+        colorValue.innerHTML = this.dataset.colorPrice;
+        number2 = parseInt(this.dataset.colorPrice);
+        suma = number1 + number2 + number3 + number4;
+        });
+    }
+
+    for (var i = 0; i < listPanelChildren2.length; i++) {
+        listPanelChildren2[i].addEventListener("click", function () {
+        listLabel[2].innerHTML = this.textContent;
+        choice3.style.display = "none";
+
+        pattern.innerHTML = this.textContent;
+        patternValue.innerHTML = this.dataset.materialPrice;
+        number3 = parseInt(this.dataset.materialPrice);
+        suma = number1 + number2 + number3 + number4;
+        });
+    }
+
+// dopisanie do KOSZTÓW transportu           
+    var transportCost = document.querySelector("#transport");
+
+    transportCost.addEventListener("click", function () {
+      	var price = transportCost.dataset.transportPrice;
+       	suma = number1 + number2 + number3;
+        number4 = parseInt(price);
+        if (transportCost.checked) {
+            transport.textContent = "Transport";
+            transportValue.textContent = price;
+           	suma += number4;
+        } 
+        else {
+        	transport.innerHTML = "";
+           	transportValue.textContent = "";
+            suma = number1 + number2 + number3;
+        }
+         // ZWERYFIKOWAĆ !!!
+    sum.textContent = suma;
+    });
 
 }
 

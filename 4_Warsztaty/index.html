@@ -106,7 +106,7 @@
 	<section class="section3">
 		<div class="container">
 <!-- sekcja CENNIK z trzema boksami ofertowymi ma łączną szerokość kontenera -->
-			<div class="title1">
+			<div class="block_name">
 				<h2>cennik</h2>
 				<div class="line_long"></div>
 			</div>
@@ -214,11 +214,11 @@
 		</div>
 	</section>
 
-<!-- sekcja przygotowana do KALKULATORA -->
+<!-- sekcja KALKULATORA -->
 	<section class="application section5">
 	    <div class="container">
 	        <section class="choice_part inline">
-	            <div class="title1">
+	            <div class="block_name">
 					<h2>skomponuj swoje krzesło</h2>
 					<div class="line_long"></div>
 				</div>
@@ -254,8 +254,6 @@
 	                    <input type="checkbox" id="transport" data-transport-price="80">
 	                    <label for="transport">Transport</label>
 	                </div>
-	                <!--<div class="checkbox"></div>-->
-	                <!--<span class="list_label inline_text">Transport</span>-->
 	            </div>
 	        </section>
 
@@ -265,11 +263,10 @@
 
 	        <section class="summary_part inline">
 	            
-				<div class="title1">
+				<div class="block_name">
 					<h2>podsumowanie</h2>
 					<div class="line_long"></div>
 				</div>
-
 
 	            <div class="summary_panel">
 	                <div class="panel_left">
@@ -284,9 +281,13 @@
 	                    <span class="pattern value"></span>
 	                    <span class="transport value"></span>
 	                </div>
+	            </div>
+	                
+	            <div class="amount_panel">
 	                <div class="sum_label">SUMA</div>
 	                <div class="sum"><strong></strong></div>
 	            </div>
+	                
 	            <div>
 	            	<a href="" class="green_button">Zamawiam</a>
 	            </div>
@@ -299,34 +300,31 @@
 	<section class="section4" id="write-to-us">
 		<div class="contact container">
 
-			<div class="title1">
+			<div class="block_name">
 				<h2>kontakt</h2>
 				<div class="line_long"></div>
 			</div>
-			
-			<div class="left_part">
-				<form>
-					<input type="text" name="name" placeholder="imię">
-					<input type="email" name="email" placeholder="e-mail">
-					<textarea rows="4" placeholder="wiadomość"></textarea>
-				</form>
-			</div>
-			
-			<div class="right_part">
-				<img id="image" src="images/red_chair.png">
-				
-			<!--	<div class="agreement">
-					<div class="form_ok"></div>
-					<p>Zgadzam się na przetwarzanie danych osobowych</p>
-				</div>  -->
-				
- 				<div class="checkbox check-box">
-	                <input type="checkbox" id="personal-data">
-	                <label for="personal-data" id="agreement">Zgadzam się na przetwarzanie danych osobowych</label>
-	            </div>
 
-				<button type="submit" name="submit">wyślij</button>
+			<div class="contact-elements">
+				<div class="left_part">
+					<form>
+						<input type="text" name="name" placeholder="imię">
+						<input type="email" name="email" placeholder="e-mail">
+						<textarea rows="4" placeholder="wiadomość"></textarea>
+					</form>
+				</div>
+			
+				<div class="right_part">
+					<img id="image" src="images/red_chair.png">
+				
+ 					<div class="checkbox check-box">
+		                <input type="checkbox" id="personal-data">
+		                <label for="personal-data" id="agreement">Zgadzam się na przetwarzanie danych osobowych</label>
+		            </div>
+					<button type="submit" name="submit">wyślij</button>
+				</div>
 			</div>
+			
 			
 		</div>
 	</section>
