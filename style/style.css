@@ -53,8 +53,8 @@ table {
 
 @font-face {
     font-family: 'ralewayregular';
-    src: url('fonts/webfontkit-20190203-064127/raleway-regular-webfont.woff2') format('woff2'),
-         url('fonts/webfontkit-20190203-064127/raleway-regular-webfont.woff') format('woff');
+    src: url('../fonts/webfontkit-20190203-064127/raleway-regular-webfont.woff2') format('woff2'),
+         url('../fonts/webfontkit-20190203-064127/raleway-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -62,8 +62,8 @@ table {
 
 @font-face {
     font-family: 'ralewaybold';
-    src: url('fonts/webfontkit-20190203-064127/raleway-bold-webfont.woff2') format('woff2'),
-         url('fonts/webfontkit-20190203-064127/raleway-bold-webfont.woff') format('woff');
+    src: url('../fonts/webfontkit-20190203-064127/raleway-bold-webfont.woff2') format('woff2'),
+         url('../fonts/webfontkit-20190203-064127/raleway-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -71,8 +71,8 @@ table {
 
 @font-face {
     font-family: 'ralewaylight';
-    src: url('fonts/webfontkit-20190203-064127/raleway-light-webfont.woff2') format('woff2'),
-         url('fonts/webfontkit-20190203-064127/raleway-light-webfont.woff') format('woff');
+    src: url('../fonts/webfontkit-20190203-064127/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/webfontkit-20190203-064127/raleway-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -533,7 +533,7 @@ button.more {
 }
 .commercial .image1 {
 	background-color: #888;
-	background-image: url("images/box1_img.jpg");
+	background-image: url("../images/box1_img.jpg");
 }
 
 .commercial .image1 p {
@@ -547,7 +547,7 @@ button.more {
 
 .commercial .image2 {
 	background-color: #888;
-	background-image: url("images/box2_img.jpg");
+	background-image: url("../images/box2_img.jpg");
 }
 
 .commercial .image2 p {
@@ -899,7 +899,7 @@ textarea {
 	width: 70px;
 	height: 46px;
 	border: 1px solid #85ffe6;
-	background-image: url("images/form_ok.jpg");
+	background-image: url("../images/form_ok.jpg");
 	background-position: center;
 	display: inline-block;
 	background-repeat: no-repeat;
