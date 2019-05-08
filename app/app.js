@@ -54,33 +54,33 @@ function init() {
 
 // obrazki i indeks do sterowania:
 	var list = document.querySelectorAll(".pictures"); 	// lista klas
-	var i = 0;
-	list[i].classList.add("visible"); 
-	list[i].classList.remove("pictures"); 
+	var z = 0;
+	list[z].classList.add("visible"); 
+	list[z].classList.remove("pictures"); 
 
 	next.addEventListener('click', nextSlide); 			// na kliknięcie uruchom funkcję 'nextSlide'
 	previous.addEventListener('click', prevSlide);		// na kliknięcie uruchom funkcję 'prevSlide'
 
 	function nextSlide(event) {
-		list[i].classList.add("pictures"); 		// bieżącemy obrazkowi dodaj klasę 'pictures' (ukryje go)
-		list[i].classList.remove("visible"); 	// usuń mu klasę 'visible'
-		i += 1;									
-		if (i === list.length) { 				
-			i = 0;
+		list[z].classList.add("pictures"); 		// bieżącemy obrazkowi dodaj klasę 'pictures' (ukryje go)
+		list[z].classList.remove("visible"); 	// usuń mu klasę 'visible'
+		z += 1;									
+		if (z === list.length) { 				
+			z = 0;
 		}
-		list[i].classList.remove("pictures"); 	// następnemu obrazkowi usuń klasę 'pictures'
-		list[i].classList.add("visible");		// dodaj klasę 'visible' (pokaże go)
+		list[z].classList.remove("pictures"); 	// następnemu obrazkowi usuń klasę 'pictures'
+		list[z].classList.add("visible");		// dodaj klasę 'visible' (pokaże go)
 	}
 		
 	function prevSlide(event) {
-		list[i].classList.remove("visible");
-		list[i].classList.add("pictures"); 
-		i -= 1;
-		if (i < 0) {
-			i = 2;
+		list[z].classList.remove("visible");
+		list[z].classList.add("pictures"); 
+		z -= 1;
+		if (z < 0) {
+			z = 2;
 		}
-		list[i].classList.remove("pictures");
-		list[i].classList.add("visible"); 
+		list[z].classList.remove("pictures");
+		list[z].classList.add("visible"); 
 	}
 
 
@@ -212,6 +212,7 @@ function init() {
         patternValue.innerHTML = this.dataset.materialPrice;
         number3 = parseInt(this.dataset.materialPrice);
         suma = number1 + number2 + number3 + number4;
+        sum.textContent = suma;
         });
     }
 
